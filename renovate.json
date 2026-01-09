@@ -1,6 +1,265 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "rebaseWhen": "conflicted",
+    "osvVulnerabilityAlerts": true,
+    "packageRules": [
+        {
+            "matchPackageNames": [
+                "VlcLib",
+                "Vlc.DotNet.Wpf",
+                "gradle",
+                "com.atlassian.bamboo:bamboo-specs-parent",
+                "com.android.tools.build:gradle"
+            ],
+            "groupName": "Disabled Packages",
+            "enabled": false
+        },
+        {
+            "matchPackageNames": [
+                "*"
+            ],
+            "groupName": "Other Packages",
+            "enabled": false
+        },
+        {
+            "matchPackageNames": [
+                "/^Autofac.*/",
+                "/^Microsoft\\.NET\\.Test.*/",
+                "NUnit",
+                "NUnit.Analyzers",
+                "NUnit.Console",
+                "NUnit3TestAdapter",
+                "Moq",
+                "/^coverlet.*/",
+                "Bogus",
+                "MartinCostello.SqlLocalDb",
+                "Fare"
+            ],
+            "groupName": "Unit Tests",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^DevExpress.*/"
+            ],
+            "groupName": "DevExpress",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^System.*/",
+                "!/^System\\.Data.SQL.*/i",
+                "!/^System\\.Diagnostics/",
+                "!/^System\\.ServiceModel\\.Security/",
+                "!/^System\\.Windows\\.Interactivity/",
+                "/^Microsoft\\..*/",
+                "!/^Microsoft\\.Xaml.*/",
+                "!/^Microsoft\\.AspNet.*/",
+                "!/^Microsoft\\.CodeAnalysis.*/",
+                "!/^Microsoft\\.Data.*/",
+                "!/^Microsoft\\.NET.Test.*/",
+                "!/^Microsoft\\.Owin.*/",
+                "!/^Microsoft\\.VisualStudio\\.Web/",
+                "!/^Microsoft\\.Web.*/"
+            ],
+            "groupName": "System",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "System.ServiceModel.Security"
+            ],
+            "allowedVersions": "<6.0.0",
+            "groupName": "System",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^Microsoft\\.CodeAnalysis.*/",
+                "/^StyleCop\\.Analyzers.*/",
+                "Jetbrains.Annotations"
+            ],
+            "groupName": "Code Analysis",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^LibVLCSharp.*/",
+                "/^VideoLAN.*/"
+            ],
+            "groupName": "VLC",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^System\\.Diagnostics.*/",
+                "/^OpenTelemetry.*/"
+            ],
+            "groupName": "Diagnostics",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^SharpKml.*/"
+            ],
+            "groupName": "GIS",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "DbfDataReader"
+            ],
+            "allowedVersions": "<=0.7.0",
+            "groupName": "GIS",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^DotSpatial.*/"
+            ],
+            "allowedVersions": "<4.0.0",
+            "groupName": "GIS",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^7z.*/",
+                "/^SevenZipSharp.*/"
+            ],
+            "groupName": "7-zip",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "WinSCP",
+                "/^FubarDev\\.FtpServer.*/"
+            ],
+            "groupName": "FTP",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "Extended.Wpf.Toolkit",
+                "/^Microsoft\\.Xaml.*/",
+                "DockPanelSuite",
+                "ActiproCustomControls",
+                "FontAwesome.WPF",
+                "MicrosoftExpressionInteractions",
+                "Ookii.Dialogs.Wpf",
+                "System.Windows.Interactivity",
+                "Xceed.Wpf.Toolkit"
+            ],
+            "groupName": "WPF",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^MQTTnet\\.*/"
+            ],
+            "allowedVersions": "<5.0.0",
+            "groupName": "MQTT",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^NLog.*/",
+                "Ninject.Extensions.Logging.nlog"
+            ],
+            "groupName": "NLog",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^EntityFramework.*/",
+                "/^MySql.*/",
+                "/^System\\.Data\\.SQL.*/i",
+                "Microsoft.Data.SqlClient"
+            ],
+            "groupName": "Database",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "CommandLine.Net",
+                "CommandLineParser",
+                "Pastel"
+            ],
+            "groupName": "Console Utilities",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^Swashbuckle.*/",
+                "Antlr",
+				"Atlassian.SDK",
+				"Flurl.Http",
+                "IIS.Microsoft.Web.Administration",
+                "/^Microsoft\\.AspNet\\..*/",
+                "/^Microsoft\\.Owin.*/",
+                "/^Microsoft\\.JavaScript.*/",
+                "/^Microsoft\\.TypeScript.*/",
+                "Modernizr",
+                "/^Owin.*/",
+                "WebGrease"
+            ],
+            "groupName": "Web",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^Microsoft\\.AspNetCore.*/"
+            ],
+            "allowedVersions": "<9.0.0",
+            "groupName": "Web",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^Microsoft(\\.VisualStudio)?\\.Web.*/"
+            ],
+            "allowedVersions": "<=9.0.0",
+            "groupName": "Web",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "NJsonSchema"
+            ],
+            "allowedVersions": "<=11.3.2",
+            "groupName": "Web",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^NSwag.*/"
+            ],
+            "allowedVersions": "<=14.4.0",
+            "groupName": "Web",
+            "enabled": true
+        },
+        {
+            "matchPackageNames": [
+                "/^Newtonsoft\\.Json.*/",
+                "ICal.Net",
+                "/^Lextm\\.SharpSnmpLib.*/",
+                "CsvHelper",
+                "/^BCrypt.*/",
+                "/^CrystalReports.*/",
+                "LINQtoCSV",
+                "NAudio",
+                "/^NHunspell.*/",
+                "PegasusImaging",
+                "/^SharpDX.*/",
+                "SnmpSharpNet",
+                "StrongNamer",
+                "TextToSpeech",
+                "TimeZoneNames",
+                "TwoFactorAuth.Net",
+                "/^Windows7API.*/",
+                "WriteableBitmapEx"
+            ],
+            "groupName": "General",
+            "enabled": true
+        }
+    ]
 }
